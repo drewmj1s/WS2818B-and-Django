@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DG</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1> LEDS </h1>
+        <p>Select from the options below and the press submit to change values of your LED strip</p>
+    </div>
+    
+    <div class="main">
+        {% block content %}
+            <div class="options">
+                <h2>Create a new pattern</h2>
+                <hr />
+                <form method ="POST"> {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="db_button" style = "font-weight:bold; font-size:20px;" type = "submit" value = "add pattern" />
+                </form>
+                <hr />
+                <table>
+                    <th>If you are not familiar with hexidecimal RGB values, here are examples:<th/>
+                    <tr>
+                        <td>#00F</td>
+                        <td style="color:blue">Blue</td>
+                    </tr>
+                    <tr>
+                        <td>#0F0</td>
+                        <td style="color:green">Green</td>
+                    </tr>
+                    <tr>
+                        <td>#F00</td>
+                        <td style="color:red">Red</td>
+                    </tr>
+                </table>
+            </div>
+        {% endblock %}
+        <br />
+        {% if all_patterns %}
+        <div class ="options" id="db">
+        <h2> Current stored patterns </h2>
+        <hr />
+            <div class = "db_patterns">
+                {% for pattern in all_patterns %}
+                    <div>
+                    <a href = "{% url 'on_page' pattern_speed=pattern.speed_var pattern_color=pattern.colors pattern_name=pattern.name pattern_leds=pattern.num_leds pattern_baf=pattern.back_and_forth %}" >
+                    <button class="db_button" style="font-size:16px; border-left:10px solid {{pattern.colors}}; margin:2px;">Turn on {{pattern.name}} | {{pattern.speed_var}}</button></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <h3>no patterns in database yet, add some! </h3>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

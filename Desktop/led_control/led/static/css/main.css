@@ -1,0 +1,131 @@
+*{
+    background-color:#2f599b;
+    color:black;
+    font-family: 'Montserrat', sans-serif;
+}
+.header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    letter-spacing: 5px;
+    
+}
+.header *{
+    color:white;
+}
+.header h1{
+    text-decoration:underline;
+    
+}
+.header p{
+    letter-spacing: 1px;
+}
+.main{
+    display:flex;
+    flex-flow:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+   
+}
+.main *{
+    background-color:white;
+    }
+.options{
+    
+    height:50%;
+    border:2px solid black;
+    border-radius:5px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    padding-left:1%;
+    padding-right:2%;
+    margin:2px;
+    padding-bottom:10px;
+    width:50%;
+}
+.options h2{
+    width:100%;
+}
+.options hr{
+    width:100%;
+}
+
+.db_patterns{
+    height:50%;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    background-color: #D3D3D3;
+}
+
+.db_button{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+    height:35px;
+    font-size:16px;
+    font-weight:bold;
+    background-color:#DDD;
+    opacity:.6;
+    transition: border-radius 0.5s ease-in-out, opacity 0.2s ease-in-out;
+    border-radius:8px;
+    border:0;
+    width:100%;
+}
+
+.db_button:hover{
+    opacity:1;
+    border-radius:16px;
+}
+.db_patterns>*{
+    flex: 1 1 25%;
+    }
+.slider {
+  margin-left:5%;
+  margin-right:5%;
+  -webkit-appearance: none;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #0104FF;
+  cursor: pointer;
+}
+
+.colour{
+    animation: anim 2s linear 2s infinite alternate;
+}
+@keyframes anim {
+  from  {border-left:3px; }
+  to  {border-left:5px; }
+}
+
+@media screen and (max-width: 1000px) {
+    .body {
+        font-size:40px;
+    }
+    .options {
+        width: 80%;
+        font-size:40px;
+    }
+    .db_patterns{
+        width:80%;
+    }
+}
