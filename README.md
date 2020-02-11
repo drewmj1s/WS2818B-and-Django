@@ -6,12 +6,20 @@ The purpose of this project was to make an easy-to-use user interface for applyi
 
 ## TO USE
 The product itself is pretty simple to use after you've gone through the setup.
+
 Once you've cloned the repository, navigate into the folder that was downloaded, should be led_control, from a terminal.
+
 To run the site, use the command ```python manage.py runserver```.
+
 You should see output that says that the site is being hosted on the URL localhost:xxxx, where xxxx is a port number, likely 8080.
+
 If your terminal supports it, you may click the link to that URL.
+
 If your terminal does not support it, you may go into your browser and type in localhost:xxxx, the port number it gives.
+
 If you haven't done so already, you will want to connect some jumper wires to the WS2818B from your Raspberry Pi.
+
+
 > While the Raspberry Pi is off, connect a jumper wire from a 5 Volt pin on the RPi to the red cable on the WS2818B
 
 > Connect another jumper wire from a Ground pin on the RPi to the black cable on the WS2818B
