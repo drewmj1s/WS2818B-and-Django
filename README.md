@@ -13,7 +13,9 @@ If your terminal supports it, you may click the link to that URL.
 If your terminal does not support it, you may go into your browser and type in localhost:xxxx, the port number it gives.
 If you haven't done so already, you will want to connect some jumper wires to the WS2818B from your Raspberry Pi.
 > While the Raspberry Pi is off, connect a jumper wire from a 5 Volt pin on the RPi to the red cable on the WS2818B
+
 > Connect another jumper wire from a Ground pin on the RPi to the black cable on the WS2818B
+
 > Finally, connect a last jumper wire from GPIO pin 18 to the green cable on the WS2818B
 
 You can change the GPIO pin that the output is being read from if you prefer in led_control/led/views.py on line 18 that says DATA_OUTPUT_PIN = 18. Be aware of what the certain pins do before changing or connecting anything.
